@@ -1,18 +1,12 @@
-body {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
 #controls {
   border-radius: 8px;
   padding: 32px;
-  width: 486px;
-  height: 104px;
   background-color: #f6f6fe;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
+  margin-bottom: 16px;
 }
 
 input {
