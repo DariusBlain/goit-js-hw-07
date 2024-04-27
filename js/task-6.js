@@ -13,15 +13,17 @@ const boxes = document.querySelector('#boxes');
 let amount;
 function createBoxes(amount) {
   if (amount >= 1 && amount <= 100) {
+    const fragment = document.createDocumentFragment();
     let size = 30;
     for (let i = 0; i < amount; i++) {
       const createElement = document.createElement('div');
       createElement.style.width = size + 'px';
       createElement.style.height = size + 'px';
       createElement.style.backgroundColor = getRandomHexColor();
-      boxes.append(createElement);
+      fragment.append(createElement);
       size += 10;
     }
+    boxes.append(fragment);
   }
 }
 

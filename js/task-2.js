@@ -28,13 +28,12 @@ const images = [
 const gallery = document.querySelector('.gallery');
 let count = 0;
 
-images.map(image => {
+const stringCode = images.reduce((accumulator, image) => {
   if (count < 3) {
-    gallery.insertAdjacentHTML(
-      'beforeend',
-      `<li><img src="${image.url}" alt="${image.alt}" class="gallery-image" width="360" /></li>`
-    );
+    accumulator += `<li><img src="${image.url}" alt="${image.alt}" class="gallery-image" width="360" /></li>`;
     count++;
   }
-});
+  return accumulator;
+}, '');
 
+gallery.insertAdjacentHTML('beforeend', stringCode);
