@@ -26,13 +26,9 @@ const images = [
 ];
 
 const gallery = document.querySelector('.gallery');
-let count = 0;
 
 const stringCode = images.reduce((accumulator, image) => {
-  if (count < 3) {
-    accumulator += `<li><img src="${image.url}" alt="${image.alt}" class="gallery-image" width="360" /></li>`;
-    count++;
-  }
+  accumulator += `<li><img src="${image.url}" alt="${image.alt}" class="gallery-image" width="360" /></li>`;
   return accumulator;
 }, '');
 
